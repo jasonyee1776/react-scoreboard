@@ -35,6 +35,10 @@ class App extends Component {
     title: 'Fooking Title'
   };
 
+  // tracking player ID
+  prevPlayerId = 5;
+
+
   handleRemovePlayer = (id) => {
     this.setState( prevState => {
       return {
@@ -50,6 +54,43 @@ class App extends Component {
 
   }
 
+  // Fucntion below adds new Players
+  // Need to bring in previous players object from App State and combine them with new player object
+  // Using spread opperator    
+  
+/*
+  - BETTER PRACTICE TO UPDATE TO A NEW STATE USING PREVIOUS STATE TO ENSURE YOU ARE USING THE MOST UP TO DATE "STATE"
+    - EX: when state gets upated in batches, might cause state to not update when it should 
+
+  handleAddNewPlayer = (name) => {
+    this.setState({
+      players: [ 
+        ...this.state.players,
+        {
+          name: name,
+          score: 0,
+          id: this.prevPlayerId += 1
+        }
+      ]
+    })
+  }
+*/
+
+  handleAddNewPlayer = (name) => {
+    this.setState( prevState => {
+      return {
+        players: [ 
+          ...prevState.players,
+          {
+            name: name,
+            score: 0,
+            id: this.prevPlayerId += 1
+          }
+        ]
+      }
+    })
+  }
+
   render() {
     return (
       <div className="scoreboard">
@@ -59,7 +100,6 @@ class App extends Component {
         />
         {/* Players list 
             map() has an optional buitl-in "index" parameter 
-
           */}
         {this.state.players.map( (player, index) =>
           <Player 
@@ -72,7 +112,9 @@ class App extends Component {
             index={index}   
           />
         )}
-          <AddPlayerForm />
+          <AddPlayerForm 
+            addPlayer={this.handleAddNewPlayer}
+          />
 
       </div>
     );
