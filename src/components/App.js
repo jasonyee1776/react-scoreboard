@@ -59,7 +59,7 @@ class App extends Component {
         />
         {/* Players list 
             map() has an optional buitl-in "index" parameter 
-            test
+
           */}
         {this.state.players.map( (player, index) =>
           <Player 
