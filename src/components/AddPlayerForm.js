@@ -21,7 +21,7 @@ class AddPlayerForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        if (this.state.value === "") {
+        if (this.state.value.trim() == "") {
             alert('Input can not be empty.')
             return false;
         } else {
