@@ -55,12 +55,12 @@ class App extends Component {
   }
 
   // Fucntion below adds new Players
-  // Need to bring in previous players object from App State and combine them with new player object
-  // Using spread opperator    
+  // Need to bring in previous Players object from App State and combine them with new Player object
+  // Below example uses spread opperator    
   
 /*
-  - BETTER PRACTICE TO UPDATE TO A NEW STATE USING PREVIOUS STATE TO ENSURE YOU ARE USING THE MOST UP TO DATE "STATE"
-    - EX: when state gets upated in batches, might cause state to not update when it should 
+  - BEST PRACTICE TO UPDATE TO A NEW STATE USING PREVIOUS STATE TO ENSURE YOU ARE USING THE MOST UP TO DATE "STATE"
+    - EX: state sometimes gets upated in batches and this might cause a delay in updating state 
 
   handleAddNewPlayer = (name) => {
     this.setState({
