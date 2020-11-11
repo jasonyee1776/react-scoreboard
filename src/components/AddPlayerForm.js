@@ -21,10 +21,15 @@ class AddPlayerForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addPlayer(this.state.value);
-        this.setState({
+        if (this.state.value === "") {
+            alert('Input can not be empty.')
+            return false;
+        } else {
+            this.props.addPlayer(this.state.value);
+            this.setState({
             value: ''
-        })
+        }
+        )}
     }
 
     render() {
