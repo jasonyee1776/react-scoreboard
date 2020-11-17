@@ -5,7 +5,7 @@ import React, { Component } from 'react'
         - Naturally keep some internal state
     - In order to get the value from a React Form element we must create a "Controlled Input"
         - Element whose value is controlled by react with state
-        1) Create state for "value" of <input>
+        1) Create state for "value" of <input> 
         2) Listen for changes on input to detect when value is updated
         3) Create event handler that updates the state (state of this particular class component's) 
 */
