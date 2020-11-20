@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// Updates
+
 class Stopwatch extends Component {
 
     render() {
