@@ -28,7 +28,7 @@ import Counter from './Counter';
 class Player extends PureComponent {
   render() {
     console.log(this.props.name + " rendered")
-    // destructure props with variable declaration
+    // destructure props with variable assignment
     const { 
       removePlayer,
       id,
