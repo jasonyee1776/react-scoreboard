@@ -3,7 +3,8 @@ import React from 'react';
 const Counter = ({ index, score, changeScore}) => {
     
     
-   /*  incrementScore = () => {
+   /*  
+   incrementScore = () => {
       this.setState( prevState => ({
         score: prevState.score + 1
       }));
@@ -13,7 +14,8 @@ const Counter = ({ index, score, changeScore}) => {
       this.setState( prevState => ({
         score: prevState.score - 1
       }));
-    } */
+    } 
+    */
   
     
     return (

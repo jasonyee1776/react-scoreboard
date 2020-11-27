@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 /* 
     - <form> and <input> elements on React act different than other elements
-        - Naturally keep some internal state
+        - Naturally keep internal state
     - In order to get the value from a React Form element we must create a "Controlled Input"
         - Element whose value is controlled by react with state
         1) Create state for "value" of <input> 
@@ -15,25 +15,30 @@ class AddPlayerForm extends Component {
         value: ''
     }
 
+    /* 
+        - Refs provide a way to access DOM nodes or React elements created in the render method.
+    */
+
+
     handleValueChange = (e) => {
-        this.setState({ value: e.target.value})
+        this.setState({ value: e.target.value});
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
         if (this.state.value.trim() == "") {
-            alert('Input can not be empty.')
+            alert('Input can not be empty.');
             return false;
         } else {
             this.props.addPlayer(this.state.value);
             this.setState({
-            value: ''
-        }
+                value: ''
+            }
         )}
     }
 
     render() {
-        console.log(this.state.value)
+        console.log(this.state.value);
         return (
             <form onSubmit={this.handleSubmit}>
                 <input 

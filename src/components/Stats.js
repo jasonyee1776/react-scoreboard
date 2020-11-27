@@ -4,7 +4,7 @@ const Stats = ({ players }) => {
     /* 
         - Desstructuring allows us to pull out properties from an object
         - In this case we're destructuing the props objects
-            - Destructure props by setting as funciton parameters
+            - Destructure props by setting an objects as funciton parameters
             - Can also destrucutre props with a variable assignment
 
     */ 
