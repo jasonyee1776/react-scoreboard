@@ -32,7 +32,7 @@ class App extends Component {
         id: 5
       }
     ],
-    title: 'Fooking Title'
+    title: 'Fooking Scoreboard'
   };
 
   // tracking player ID
@@ -95,8 +95,8 @@ class App extends Component {
     return (
       <div className="scoreboard">
         <Header 
-          title={this.state.title} 
           players={this.state.players}
+          title={this.state.title}
         />
         {/* Players list 
             map() has an optional buitl-in "index" parameter 

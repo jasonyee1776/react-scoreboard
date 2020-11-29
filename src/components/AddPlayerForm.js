@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 /* 
     - <form> and <input> elements on React act different than other elements
@@ -19,7 +20,6 @@ class AddPlayerForm extends Component {
         - Refs provide a way to access DOM nodes or React elements created in the render method.
     */
 
-
     handleValueChange = (e) => {
         this.setState({ value: e.target.value});
     }
@@ -35,6 +35,11 @@ class AddPlayerForm extends Component {
                 value: ''
             }
         )}
+    }
+
+    // Class component PropType validation of addPlayer() function
+    static propTypes = {
+        addPlayer: PropTypes.func
     }
 
     render() {
@@ -55,7 +60,5 @@ class AddPlayerForm extends Component {
         )
     }
 }
-
-
 
 export default AddPlayerForm;

@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 import Counter from './Counter';
  
 /*
@@ -26,6 +27,18 @@ import Counter from './Counter';
 */
 
 class Player extends PureComponent {
+  // PropTypes for Class Components can be defined within Class component before the render() method using the "static" declaration
+  // Using "static" means we do not have to instantiate the Class Component
+
+  static propTypes = {
+    removePlayer: PropTypes.func,
+    id: PropTypes.number,
+    name: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+    changeScore: PropTypes.func,
+    index: PropTypes.number
+  };
+
   render() {
     // destructure props with variable assignment
     const { 
