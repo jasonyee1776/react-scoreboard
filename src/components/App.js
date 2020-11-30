@@ -91,6 +91,23 @@ class App extends Component {
     })
   }
 
+  handleHighScore = () => {
+    // create function that will return the player id with the highest score
+    // how to handle players with tied scores?
+    const numOfPlayers = this.state.players.length
+    let highScorePlayerId = []
+    let highScore = 0
+    for(let i = 0;i<numOfPlayers;i++) {
+      if(this.state.players[i].score <= 0) {
+          break;
+      } else if(this.state.players[i].score > highScore) {
+          highScore = this.state.players[i].score
+          highScorePlayerId = [this.state.players[i].id]
+      }
+    }
+    return highScorePlayerId;
+  }
+
   render() {
     return (
       <div className="scoreboard">
@@ -109,7 +126,8 @@ class App extends Component {
             removePlayer={this.handleRemovePlayer}
             score={player.score}
             changeScore={this.handleScoreChange}
-            index={index}   
+            index={index}
+            handleHighScore={this.handleHighScore}
           />
         )}
           <AddPlayerForm 
