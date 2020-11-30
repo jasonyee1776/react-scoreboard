@@ -38,7 +38,13 @@ class Player extends PureComponent {
     score: PropTypes.number.isRequired,
     changeScore: PropTypes.func,
     index: PropTypes.number,
-    handleHighScore: PropTypes.func
+    handleHighScore: PropTypes.func,
+    highscore: PropTypes.number,
+    players: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      score: PropTypes.number,
+      id: PropTypes.number
+    }))
   };
 
   render() {
@@ -50,7 +56,9 @@ class Player extends PureComponent {
       score,
       changeScore,
       index,
-      handleHighScore
+      handleHighScore,
+      players,
+      highscore
     } = this.props
     console.log(name + " rendered")
     return (
@@ -60,6 +68,9 @@ class Player extends PureComponent {
           <Crown 
             score={score}
             handleHighScore={handleHighScore}
+            players={players}
+            id={id}
+            highscore={highscore}
           />
           { name }
         </span>
