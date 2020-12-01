@@ -32,8 +32,7 @@ class App extends Component {
         id: 5
       }
     ],
-    title: 'Fooking Scoreboard',
-    highscore: 0
+    title: 'Fooking Scoreboard'  
   };
 
   // tracking player ID
@@ -91,7 +90,7 @@ class App extends Component {
       }
     })
   }
-
+/*
   handleHighScore = () => {
     // create function that will return the player id with the highest score
     // Still need to figure out how to handle players with tied scores?
@@ -106,9 +105,10 @@ class App extends Component {
           highScorePlayerId = [this.state.players[i].id]
       }
     }
+    console.log(highScorePlayerId)
     return highScorePlayerId;
   }
-
+*/
 
 
   render() {
@@ -130,9 +130,9 @@ class App extends Component {
             score={player.score}
             changeScore={this.handleScoreChange}
             index={index}
-            handleHighScore={this.handleHighScore}
+            //handleHighScore={this.handleHighScore}
             players={this.state.players}
-            highcore={this.state.highscore}
+            highscore={this.state.highscore}
           />
         )}
           <AddPlayerForm 
