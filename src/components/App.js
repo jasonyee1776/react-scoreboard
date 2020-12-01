@@ -32,7 +32,7 @@ class App extends Component {
         id: 5
       }
     ],
-    title: 'Fooking Scoreboard'  
+    title: 'Fooking Scoreboard'
   };
 
   // tracking player ID
@@ -110,8 +110,21 @@ class App extends Component {
   }
 */
 
+getHighScore = () => {
+  // create function that filters out player with highest score
+  const scores = this.state.players.map( p => p.score)
+  const highScore = Math.max(...scores)
+  console.log(highScore)
+  if (highScore) {
+    return highScore;
+  }
+  return null;
+}
+
+
 
   render() {
+    const highScore = this.getHighScore();
     return (
       <div className="scoreboard">
         <Header 
@@ -130,10 +143,9 @@ class App extends Component {
             score={player.score}
             changeScore={this.handleScoreChange}
             index={index}
-            //handleHighScore={this.handleHighScore}
-            players={this.state.players}
-            highscore={this.state.highscore}
-          />
+            // returns boolean value
+            isHighScore={highScore === player.score}
+            />
         )}
           <AddPlayerForm 
             addPlayer={this.handleAddNewPlayer}

@@ -38,25 +38,18 @@ class Player extends PureComponent {
     score: PropTypes.number.isRequired,
     changeScore: PropTypes.func,
     index: PropTypes.number,
-    //handleHighScore: PropTypes.func,
-    players: PropTypes.arrayOf(PropTypes.shape({
-      name: PropTypes.string,
-      score: PropTypes.number,
-      id: PropTypes.number
-    }))
+    isHighScore: PropTypes.bool
   };
 
   render() {
     // destructure props with variable assignment
     const { 
       removePlayer,
-      id,
       name,
       score,
       changeScore,
-      index,
-      //handleHighScore,
-      players
+      isHighScore,
+      index
     } = this.props
     console.log(name + " rendered")
     return (
@@ -64,10 +57,7 @@ class Player extends PureComponent {
         <span className="player-name">
           <button className="remove-player" onClick={() => removePlayer(id)}>✖</button>
           <Crown 
-            score={score}
-            //handleHighScore={handleHighScore}
-            players={players}
-            id={id}
+            isHighScore={isHighScore}
           />
           { name }
         </span>
