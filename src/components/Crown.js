@@ -15,7 +15,6 @@ class Crown extends Component{
           if(score == this.props.players[i].score) {
               break;
           } else if(score > this.props.players[i].score) {
-              console.log('hello')
           }
         } 
     }
