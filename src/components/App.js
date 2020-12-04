@@ -90,28 +90,9 @@ class App extends Component {
       }
     })
   }
-/*
-  handleHighScore = () => {
-    // create function that will return the player id with the highest score
-    // Still need to figure out how to handle players with tied scores?
-    const numOfPlayers = this.state.players.length
-    let highScorePlayerId = []
-    let highScore = 0
-    for(let i = 0;i<numOfPlayers;i++) {
-      if(this.state.players[i].score <= 0) {
-          break;
-      } else if(this.state.players[i].score > highScore) {
-          highScore = this.state.players[i].score
-          highScorePlayerId = [this.state.players[i].id]
-      }
-    }
-    console.log(highScorePlayerId)
-    return highScorePlayerId;
-  }
-*/
 
+// create function that filters out player with highest score
 getHighScore = () => {
-  // create function that filters out player with highest score
   const scores = this.state.players.map( p => p.score)
   const highScore = Math.max(...scores)
   console.log(highScore)
