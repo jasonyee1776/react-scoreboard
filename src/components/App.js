@@ -35,9 +35,7 @@ class App extends Component {
     title: 'Fooking Scoreboard'
   };
 
-  // tracking player ID
   prevPlayerId = 5;
-
 
   handleRemovePlayer = (id) => {
     this.setState( prevState => {
@@ -54,28 +52,6 @@ class App extends Component {
 
   }
 
-  // Fucntion below adds new Players
-  // Need to bring in previous Players object from App State and combine them with new Player object
-  // Below example uses spread opperator    
-  
-/*
-  - BEST PRACTICE TO UPDATE TO A NEW STATE USING PREVIOUS STATE TO ENSURE YOU ARE USING THE MOST UP TO DATE "STATE"
-    - EX: state sometimes gets upated in batches and this might cause a delay in updating state 
-
-  handleAddNewPlayer = (name) => {
-    this.setState({
-      players: [ 
-        ...this.state.players,
-        {
-          name: name,
-          score: 0,
-          id: this.prevPlayerId += 1
-        }
-      ]
-    })
-  }
-*/
-
   handleAddNewPlayer = (name) => {
     this.setState( prevState => {
       return {
@@ -91,18 +67,14 @@ class App extends Component {
     })
   }
 
-// create function that filters out player with highest score
 getHighScore = () => {
   const scores = this.state.players.map( p => p.score)
   const highScore = Math.max(...scores)
-  console.log(highScore)
   if (highScore) {
     return highScore;
   }
   return null;
 }
-
-
 
   render() {
     const highScore = this.getHighScore();
@@ -112,9 +84,6 @@ getHighScore = () => {
           players={this.state.players}
           title={this.state.title}
         />
-        {/* Players list 
-            map() has an optional buitl-in "index" parameter 
-          */}
         {this.state.players.map( (player, index) =>
           <Player 
             name={player.name}
@@ -124,7 +93,6 @@ getHighScore = () => {
             score={player.score}
             changeScore={this.handleScoreChange}
             index={index}
-            // returns boolean value
             isHighScore={highScore === player.score}
             />
         )}

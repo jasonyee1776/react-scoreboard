@@ -8,7 +8,7 @@ const Crown = ({ isHighScore }) => (
         <rect width="30.4986" height="3.07759" transform="translate(6.56987 31.5603)"/>
     </svg>
 )
-    // add PropTypes
+
 Crown.propTypes = {
     isHighScore: PropTypes.bool
 }

@@ -18,20 +18,9 @@ class Stopwatch extends Component {
 
     }
 
-    /*
-        React Lifecycle Methods (also called Lifecycle Hooks)
-            - Built-in methods that get called at each point in the life cycle
-            - Act as Hooks that run code at key times in components life cycle
-            - Give us the abilty to control what happens when component mounts. updates, unmounts
-    */
-
-    // componentDidMount() gets called by React when component gets inserted or mounted onto DOM
     componentDidMount() {
         this.intervalID = setInterval(() => this.tick(), 100)
     }
-
-    // Anytime componentDidMount() is invoked it's important to also handle what should happen if the component were to unmount
-    // Important to handle unmounted components as it could cause memory leaks
 
     componentWillUnmount() {
         clearInterval(this.intervalID);
@@ -50,7 +39,6 @@ class Stopwatch extends Component {
     handleReset= () => {
         this.setState({ elapsedTime: 0 });
     }
-    
 
     render() {
         const seconds = Math.floor(this.state.elapsedTime/1000);

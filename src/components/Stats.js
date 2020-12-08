@@ -2,13 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Stats = ({ players }) => {
-    /* 
-        - Desstructuring allows us to pull out properties from an object
-        - In this case we're destructuing the props objects
-            - Destructure props by setting an objects as funciton parameters
-            - Can also destrucutre props with a variable assignment
-
-    */ 
 
     const totalPlayers = players.length;
     const totalPoints = players.reduce( (total, player) => {
@@ -29,7 +22,6 @@ const Stats = ({ players }) => {
             </tbody>
         </table>
     )
-
 }
 
 Stats.propTypes = {
