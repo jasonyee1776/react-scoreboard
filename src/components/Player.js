@@ -22,7 +22,8 @@ class Player extends PureComponent {
       score,
       changeScore,
       isHighScore,
-      index
+      index,
+      id
     } = this.props
     
     return(
