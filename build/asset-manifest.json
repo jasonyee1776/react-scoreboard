@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-scoreboard/static/css/main.dbd34844.chunk.css",
-    "main.js": "/react-scoreboard/static/js/main.b164ad1f.chunk.js",
-    "main.js.map": "/react-scoreboard/static/js/main.b164ad1f.chunk.js.map",
+    "main.js": "/react-scoreboard/static/js/main.9121e98b.chunk.js",
+    "main.js.map": "/react-scoreboard/static/js/main.9121e98b.chunk.js.map",
     "runtime-main.js": "/react-scoreboard/static/js/runtime-main.bed49221.js",
     "runtime-main.js.map": "/react-scoreboard/static/js/runtime-main.bed49221.js.map",
     "static/js/2.93449164.chunk.js": "/react-scoreboard/static/js/2.93449164.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.bed49221.js",
     "static/js/2.93449164.chunk.js",
     "static/css/main.dbd34844.chunk.css",
-    "static/js/main.b164ad1f.chunk.js"
+    "static/js/main.9121e98b.chunk.js"
   ]
 }
