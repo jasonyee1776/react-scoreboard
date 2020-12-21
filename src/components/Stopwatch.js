@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Stopwatch extends Component {
 
-    // update
+    
     state = {
         isRunning: false,
         elapsedTime: 0,
